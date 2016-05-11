@@ -30,6 +30,23 @@ var foreach = function(arr, f){
 };
 
 var num = [3, 4, 5];
-num.foreach(function(ele){
+/*num.foreach(function(ele){
 	console.log(ele);
 });
+
+This runs an error:
+num.foreach(function(ele){
+    ^
+TypeError: undefined is not a function
+    at Object.<anonymous> (/Users/sanjnaverma/Desktop/aitFinalPrac.js:33:5)
+    at Module._compile (module.js:460:26)
+    at Object.Module._extensions..js (module.js:478:10)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)
+    at Function.Module.runMain (module.js:501:10)
+    at startup (node.js:129:16)
+    at node.js:814:3
+
+Will figure this out later
+*/
+
