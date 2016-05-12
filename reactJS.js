@@ -96,3 +96,21 @@ React.render(
   <MyButton />,
   document.body
 )
+
+Exercise:
+Display hi
+
+var MyComponent = React.createClass({
+	render: function(){
+		var msg = this.props.great ? 'hi' :'bye';
+		return(
+			<h1>msg</h1>
+		)
+	}
+
+});
+
+React.render(
+	<MyComponent greet={true} />,
+	documet.body
+);
