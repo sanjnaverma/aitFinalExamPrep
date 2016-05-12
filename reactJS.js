@@ -25,3 +25,74 @@ React.createElement('div', {className: 'foo'}, 'Hey this is my text content!!!!'
 Example: 
 
 React.render(React.createElement('div', {className: 'foo'}, 'Hey this is my text content!!!!'), document.body);
+
+JSX: 
+Extension of JavaScript syntax that allows XML like syntax. 
+You don't HAVE to use JSX with React but they go well together
+
+Example:
+React.render(
+	<div classname="firstclass">ok...feeling good</div>,
+	document.body
+);
+First parameter of render (the element) is: <div classname="firstclass">ok...feeling good</div> ~~ this is equivalent to vanilla JS like we how we had above
+Second parameter: document.body	
+
+
+Components: is the bundling of elements together into a single component. You need to use: React.createClass
+Parameter:
+object
+
+We need to define the render property in the object, and that property should be a function that generates elements
+
+
+
+ 
+var MyComponent = React.createClass({
+  render: function() {
+    return (
+      <div> <h1>A Message</h1>{this.props.message}</div>
+    );
+  }
+});
+
+React.render(
+  <MyComponent message="Hi there!" />,
+  document.body
+);
+
+You can have things pop up multiple times!
+var MyComponent = React.createClass({
+  render: function() {
+    var text = "";
+    for(var i = 0; i < this.props.times; i++) {
+      text += "hello ";
+    }
+    return (
+      <div> {text} </div>
+    )
+  }
+});
+
+React.render(
+  <MyComponent times="5" />,
+  document.body
+);
+
+And then of course, last but not least, we need to know how tohandle event handlers
+
+Let's say: click events would be represented by onClick:
+var MyButton = React.createClass({
+  onButtonClick: function(evt) {
+    alert("OMG! OMG!");
+  },
+
+  render: function() {
+    return <div onClick={this.onButtonClick}>Press This Button</div>;
+  }
+});
+
+React.render(
+  <MyButton />,
+  document.body
+)
